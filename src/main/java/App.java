@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,6 +13,8 @@ public class App {
 
         get("/" ,(request, response) -> {
             Map<String,Object> model = new HashMap<String,Object>();
+            ArrayList<Add>adds = Add.getAll();
+            model.put("adds",adds);
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
 

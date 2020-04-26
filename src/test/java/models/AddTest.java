@@ -7,6 +7,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AddTest {
+    @After
+    public void tearDown(){
+        Add.clearAllAdds();//clear out added hero after test
+    }
     @Test
     public void NewAddObjectGetsCorrectlyCreated_true() throws Exception{
         Add add = new Add("batman");
@@ -17,4 +21,19 @@ public class AddTest {
         Add add = new Add("batman");
         assertEquals("batman",add.getContent()); //making sure we can retrive each hero we add.
     }
+    @Test
+    public void AllAddsareCorrectlyReturned_true(){
+        Add add =new Add ("batman");
+        Add otherAdd = new Add ("spiderman");
+        assertEquals(2, Add.getAll().size());
+    }
+    @Test
+    public  void AllAddsContainaAllAdds_true(){
+        Add add = new Add ("batman");
+        Add otherAdd = new Add ("spiderman");
+        assertTrue(Add.getAll().contains(add));
+        assertTrue(Add.getAll().contains(otherAdd));
+    }
+    @Test
+    publi
 }

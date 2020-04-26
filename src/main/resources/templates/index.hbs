@@ -1,5 +1,14 @@
 {{#partial "content"}}
     <h1>Hero squad list</h1>
+
+    {{#if adds}}
+        {{#each adds}}
+            <p>Current hero:</p>
+            <p>{{content}}</p>
+        {{/each}}
+    {{else}}
+        <P>hero not found</P>
+    {{/if}}
     <h4> Add our hero to the squad!!</h4>
     <form action ="/add/new" method="Post">
         <label for ="content">Details</label>
@@ -9,4 +18,4 @@
     </form>
 {{/partial}}
 
-{{>layout .hbs}}
+{{>layout.hbs}}
