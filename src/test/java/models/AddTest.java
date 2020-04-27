@@ -35,5 +35,9 @@ public class AddTest {
         assertTrue(Add.getAll().contains(otherAdd));
     }
     @Test
-    publi
+    public void getAge_AddsInstantiateWith_Age() throws Exception{
+        Add.clearAllAdds();
+        Add myAdd = new Add ("batman");
+        assertEquals(0,myAdd.getAge());
+    }
 }
