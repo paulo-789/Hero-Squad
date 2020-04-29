@@ -9,14 +9,18 @@
     <input id="powers" name="powers" type="text">
     <label for="Weakness" >Weakness</label>
     <input id="weakness" name="weakness" type="text">
-    <label for ="size">size</label>
-    <input id ="size" name ="size" type="number">
-    <label for="squad">Squad name</label>
-    <input id="squad" name ="squad" type="text">
-    <label for="mission">Mission</label>
-    <input id="mission" name="mission" type="text">
 
     <button type="submit" class="btn btn-primary">submit</button>
 </form>
+    <br>
+    <form action="/squad" method="Post">
+        <label for ="size">size</label>
+        <input id ="size" name ="size" type="number">
+        <label for="squad">Squad name</label>
+        <input id="squad" name ="squad" type="text">
+        <label for="mission">Mission</label>
+        <input id="mission" name="mission" type="text">
+
+    </form>
 {{/partial}}
 {{>layout.hbs}}
