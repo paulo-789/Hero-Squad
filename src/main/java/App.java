@@ -18,22 +18,27 @@ public class App {
         //get:show all hero
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();  //displaying home
-            ArrayList<Add> heros = Add.getAll();
-            model.put("heros", heros);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
         //post:process new add form
         post("/post", (request, response) -> {
-            Map<String,ArrayList<Add>> model = new HashMap<>();
+            Map<String, Object>model = new HashMap<>();
             String name = request.queryParams("name");
             int age = Integer.parseInt(request.queryParams("age"));
             String powers = request.queryParams("powers");
             String weakness = request.queryParams("weakness");
             Add newheros = new Add(name, age, powers, weakness);
+            model.put("heros", newheros);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
 
+        get("/detail", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();  //displaying home
+            ArrayList<Add> heros = Add.getAll();
+            model.put("heros", heros);
+            return new ModelAndView(model, "add-detail.hbs");
+        }, new HandlebarsTemplateEngine());
         // hero(current)
 //        get("/detail", (request, response) -> {
 //            Map<String, Object> model = new HashMap<>();  //displaying home

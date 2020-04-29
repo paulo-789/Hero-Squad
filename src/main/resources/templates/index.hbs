@@ -1,18 +1,7 @@
 {{#partial "content"}}
 
     <h4>Your  Heroes</h4>
-    {{#if myhero}}
-        {{#each myhero}}
-            <p>hero:</p>
-            <p>{{name}}</p>
-            <p>{{age}}</p>
-            <p>{{power}}</p>
-            <p>{{weakness}}</p>
 
-        {{/each}}
-    {{else}}
-        <p>no hero found!</p>
-    {{/if}}
 
 {{/partial}}
 {{>layout.hbs}}
