@@ -14,5 +14,11 @@ public class SquadTest{
         Squad mySquad=new Squad(5,"keepers","protect");
         assertEquals(5,mySquad .getSize());
     }
+    @Test
+    public void  squad_Is_Correct(){
+        Squad mySquad = new Squad(5,"keepers","protect");
+        assertEquals("keepers",mySquad.getSquad());
+    }
+
 
 }
