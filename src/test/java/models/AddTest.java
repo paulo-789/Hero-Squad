@@ -7,37 +7,49 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AddTest {
-    @After
-    public void tearDown(){
-        Add.clearAllAdds();//clear out added hero after test
+    @Test
+    public void Instance(){
+        Add myHero = new Add("batman",17,"night vision","light");
+                assertEquals("Batman",myHero instanceof Add);
     }
     @Test
-    public void NewAddObjectGetsCorrectlyCreated_true() throws Exception{
-        Add add = new Add("batman");
-        assertEquals(true, add instanceof Add);
+    public void nameOfHero(){
+        Add myHero = new Add("batman",17,"night vision","light");
+        assertEquals("batman",myHero.getName());
     }
     @Test
-    public void AddInstantiatesWithContent_true() throws Exception{
-        Add add = new Add("batman");
-        assertEquals("batman",add.getContent()); //making sure we can retrive each hero we add.
+    public void  ageOfHero(){
+        Add myHero = new Add ("batman",17,"night vision","light");
+        assertEquals("batman",myHero.getAge());
     }
     @Test
-    public void AllAddsareCorrectlyReturned_true(){
-        Add add =new Add ("batman");
-        Add otherAdd = new Add ("spiderman");
-        assertEquals(2, Add.getAll().size());
+    public  void power(){
+        Add myHero= new Add ("batman",17,"night vision","light");
+        assertEquals("batman",myHero.getPower());
     }
     @Test
-    public  void AllAddsContainaAllAdds_true(){
-        Add add = new Add ("batman");
-        Add otherAdd = new Add ("spiderman");
-        assertTrue(Add.getAll().contains(add));
-        assertTrue(Add.getAll().contains(otherAdd));
+    public void weakness(){
+        Add myHero = new Add("batman",17,"night vision","light");
+        assertEquals("batman",myHero.getWeakness());
     }
     @Test
-    public void getAge_AddsInstantiateWith_Age() throws Exception{
-        Add.clearAllAdds();
-        Add myAdd = new Add ("batman");
-        assertEquals(0,myAdd.getAge());
+    public void list() {
+        Add firstHero = new Add("batman", 17, "night vision", "light");
+        Add secondHero = new Add("batman", 17, "night vision", "light");
+        assertTrue(Add.getAll().contains(firstHero));
+        assertTrue(Add.getAll().contains(secondHero));
     }
+    @Test
+    public void  assighnId() {
+        Add.clear();
+        Add myHero = new Add("batman", 17, "night vision", "light");
+        assertEquals(1, myHero.getId());
+    }
+    @Test
+    public  void  findSpecific_hero(){
+        Add first = new Add("batman", 17, "night vision", "light");
+        Add secondHero= new Add("batman", 17, "night vision", "light");
+        assertEquals(Add.find(secondHero.getId()), secondHero);
+    }
+
 }
