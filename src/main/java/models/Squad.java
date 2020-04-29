@@ -24,5 +24,11 @@ public class Squad {
      public String getMission(){
         return mission;
      }
-
+     public static ArrayList<Squad>getAll(){
+        return squads;
+     }
+    public static void clear() {
+        squads.clear();
+    }
 }
+

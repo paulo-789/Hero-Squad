@@ -24,6 +24,16 @@ public class SquadTest{
         Squad mySquad=new Squad(5,"keepers","protect");
         assertEquals("protect",mySquad.getMission());
     }
-
+    @Test
+    public void get_All_List(){
+        Squad firstSquad = new Squad(5,"keepers","protect");
+        Squad secondSquad= new Squad(5,"keepers","protect");
+        assertTrue(Squad.getAll().contains(firstSquad));
+        assertTrue(Squad.getAll().contains(secondSquad));
+    }
+    @Test
+    public void clear_All(){
+        Squad.clear();
+    }
 
 }

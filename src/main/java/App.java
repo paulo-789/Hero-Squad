@@ -46,8 +46,8 @@ public class App {
             int size = Integer.parseInt(request.queryParams("size"));
             String squad = request.queryParams("squad");
             String mission = request.queryParams("mission");
-            Squad mysquad = new Squad(size, squad, mission);
-            model.put("heros", mysquad);
+            Squad heros = new Squad(size, squad, mission);
+            model.put("heros", heros);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
