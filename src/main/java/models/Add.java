@@ -8,7 +8,7 @@ public class Add {
     private String power;
     private String weakness;
     private int id;
-    private static ArrayList<Add> instances = new ArrayList<>();
+    private static ArrayList<Add> heros = new ArrayList<>();
 
 
     public Add(String name,int age,String power,String weakness){
@@ -16,8 +16,8 @@ public class Add {
         this.age = age;
         this.power= power;
         this.weakness = weakness;
-        id =instances.size();
-        instances.add(this);
+        id =heros.size();
+        heros.add(this);
 
     }
     public String getName(){
@@ -33,16 +33,16 @@ public class Add {
         return weakness;
     }
     public  static ArrayList<Add>getAll(){
-        return instances;
+        return heros;
     }
     public static void clear(){
-        instances.clear();
+        heros.clear();
     }
     public int getId(){
         return id;
     }
     public static Add find(int id){
-        return instances.get(id-1);
+        return heros.get(id-1);
     }
 
 }
