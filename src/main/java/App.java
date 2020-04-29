@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import models.Add;
+import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
@@ -42,13 +43,13 @@ public class App {
 
         post("/post", (request, response) -> {
             Map<String, Object>model = new HashMap<>();
-            int age = Integer.parseInt(request.queryParams("age"));
-            String powers = request.queryParams("powers");
-            String weakness = request.queryParams("weakness");
-            Add newheros = new Add(name, age, powers, weakness);
-            model.put("heros", newheros);
+            int size = Integer.parseInt(request.queryParams("size"));
+            String squad = request.queryParams("squad");
+            String mission = request.queryParams("mission");
+            Squad mysquad = new Squad(size, squad, mission);
+            model.put("heros", mysquad);
             return new ModelAndView(model, "success.hbs");
-        }, new HandlebarsTemplateEngine())
+        }, new HandlebarsTemplateEngine());
 
     }
     }
