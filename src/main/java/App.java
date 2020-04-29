@@ -39,16 +39,16 @@ public class App {
             model.put("heros", heros);
             return new ModelAndView(model, "add-detail.hbs");
         }, new HandlebarsTemplateEngine());
-        // hero(current)
-//        get("/detail", (request, response) -> {
-//            Map<String, Object> model = new HashMap<>();  //displaying home
-//            ArrayList<Add>hero=Add.getAll();
-//            model.put("hero",hero);
-////            int idOfHero = Integer.parseInt(request.params(":id"));
-////            Add foundAdd = Add.find(idOfHero);
-//            return new ModelAndView(model, "index.hbs");
-//        }, new HandlebarsTemplateEngine());
 
+        post("/post", (request, response) -> {
+            Map<String, Object>model = new HashMap<>();
+            int age = Integer.parseInt(request.queryParams("age"));
+            String powers = request.queryParams("powers");
+            String weakness = request.queryParams("weakness");
+            Add newheros = new Add(name, age, powers, weakness);
+            model.put("heros", newheros);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine())
 
     }
     }
