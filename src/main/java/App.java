@@ -50,6 +50,12 @@ public class App {
             model.put("heros", heros);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
+        get("/detail", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();  //displaying home
+            ArrayList<Squad> heros = Squad.getAll();
+            model.put("heros", heros);
+            return new ModelAndView(model, "add-detail.hbs");
+        }, new HandlebarsTemplateEngine());
 
     }
     }
