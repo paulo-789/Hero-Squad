@@ -5,14 +5,14 @@
             <p>{{name}}</p>
             <p>{{age}}</p>
             <p>{{power}}</p>
+            <p>{{weakness}}</p>
         {{/each}}
     {{else}}
         <p>no hero found!</p>
     {{/if}}
-    {{#if squad}}
-        {{#each squad}}
-            <p>squad</p>
-            <p>{{weakness}}</p>
+    {{#if squads}}
+        {{#each squads}}
+            <p>squad:</p>
             <p>{{size}}</p>
             <p>{{squad}}</p>
             <p>{{mission}}</p>

@@ -10,6 +10,7 @@ import static spark.Spark.*;
 
 public class App {
     public static void main(String[] args) {
+        staticFileLocation("/public");
         //get :show newadd form
         get("/add", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
@@ -33,7 +34,15 @@ public class App {
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
-
+        post("/post", (request, response) -> {
+            Map<String, Object>model = new HashMap<>();
+            int size = Integer.parseInt(request.queryParams("size"));
+            String squad = request.queryParams("squad");
+            String mission = request.queryParams("mission");
+            Squad squads = new Squad(size, squad, mission);
+            model.put("squads", squads);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
         get("/detail", (request, response) -> {
             Map<String, Object> model = new HashMap<>();  //displaying home
             ArrayList<Add> heros = Add.getAll();
@@ -41,19 +50,10 @@ public class App {
             return new ModelAndView(model, "add-detail.hbs");
         }, new HandlebarsTemplateEngine());
 
-        post("/post", (request, response) -> {
-            Map<String, Object>model = new HashMap<>();
-            int size = Integer.parseInt(request.queryParams("size"));
-            String squad = request.queryParams("squad");
-            String mission = request.queryParams("mission");
-            Squad heros = new Squad(size, squad, mission);
-            model.put("heros", heros);
-            return new ModelAndView(model, "success.hbs");
-        }, new HandlebarsTemplateEngine());
-        get("/squad", (request, response) -> {
+        get("/post", (request, response) -> {
             Map<String, Object> model = new HashMap<>();  //displaying home
-            ArrayList<Squad> squad = Squad.getAll();
-            model.put("squad",squad );
+            ArrayList<Squad> squads = Squad.getAll();
+            model.put("squads",squads );
             return new ModelAndView(model, "add-detail.hbs");
         }, new HandlebarsTemplateEngine());
 

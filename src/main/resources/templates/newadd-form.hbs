@@ -1,26 +1,45 @@
 {{#partial "content"}}
-<h4> Add our hero to the squad!!</h4>
-<form action ="/post" method="Post">
-    <label for ="name">Name</label>
-    <input id ="name" name ="name" type="text">
-    <label for="age" >Age </label>
-    <input id="age" name ="age" type="text">
-    <label for="powers" >Super power</label>
-    <input id="powers" name="powers" type="text">
-    <label for="Weakness" >Weakness</label>
-    <input id="weakness" name="weakness" type="text">
 
+        <h2>Create Your Hero</h2>
+
+<form action ="/post" method="Post">
+    <div class="row">
+        <div class="col-3">
+    <label for ="name">Name</label>
+    <input id ="name" class="form-control" name ="name" type="text">
+        </div>
+            <div class="col-3">
+    <label for="age" >Age </label>
+    <input id="age" class="form-control" name ="age" type="text">
+            </div>
+                <div class="col-3">
+    <label for="powers" >Super power</label>
+    <input id="powers" class="form-control" name="powers" type="text">
+                </div>
+                    <div class="col-3">
+    <label for="Weakness" >Weakness</label>
+    <input id="weakness" class="form-control" name="weakness" type="text">
+    </div>
+    </div>
+
+
+        <h2>Create Your Squad</h2>
+    <div class="row">
+        <div class="col-4">
+    <label for="size">size</label>
+    <input id="size" class="form-control" name ="size" type="number">
+        </div>
+            <div class="col-4">
+    <label for="squad">Squad name</label>
+    <input id="squad" class="form-control" name ="squad" type="text">
+            </div>
+                <div class="col-4">
+    <label for="mission">Mission</label>
+    <input id="mission" class="form-control" name="mission" type="text">
+                </div>
+    </div>
+    <br>
     <button type="submit" class="btn btn-primary">submit</button>
 </form>
-    <br>
-    <form action="/squad" method="Post">
-        <label for ="size">size</label>
-        <input id ="size" name ="size" type="number">
-        <label for="squad">Squad name</label>
-        <input id="squad" name ="squad" type="text">
-        <label for="mission">Mission</label>
-        <input id="mission" name="mission" type="text">
-
-    </form>
 {{/partial}}
 {{>layout.hbs}}

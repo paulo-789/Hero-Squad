@@ -1,0 +1,15 @@
+body{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:10px;
+    background-color:green;
+    text-align: center;
+    background-image: linear-gradient(rgba( 0, 0, 0, 0.781), rgba(0, 0, 0, 0.788)), url("https://bit.ly/2W6CC76");
+    background-image:100%
+    background-repeat:no-repeat;
+    color :white;
+}
+img{
+   width:100%;
+   height:100%;
+}
