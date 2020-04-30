@@ -7,16 +7,22 @@ public class Add {
     private  int age;
     private  String power;
     private  String weakness;
+    private int size;
+    private String squad;
+    private String mission;
     private  int id;
 
     private static  ArrayList<Add> instances = new ArrayList<>();
 
 
-    public Add(String name,int age,String power,String weakness){
+    public Add(String name,int age,String power,String weakness,int size,String squad,String mission){
         this.name = name;
         this.age = age;
         this.power= power;
         this.weakness = weakness;
+        this.size = size;
+        this.squad= squad;
+        this.mission=mission;
         this.id =instances.size();
         instances.add(this);
 
@@ -32,6 +38,15 @@ public class Add {
     }
     public String getWeakness(){
         return weakness;
+    }
+    public int getSize(){
+        return size;
+    }
+    public String getSquad(){
+        return squad;
+    }
+    public String getMission(){
+        return mission;
     }
     public  static ArrayList<Add>getAll(){
         return instances;

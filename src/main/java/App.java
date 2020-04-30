@@ -29,7 +29,10 @@ public class App {
             int age = Integer.parseInt(request.queryParams("age"));
             String powers = request.queryParams("powers");
             String weakness = request.queryParams("weakness");
-            Add newheros = new Add(name, age, powers, weakness);
+            int size = Integer.parseInt(request.queryParams("size"));
+            String squad = request.queryParams("squad");
+            String mission = request.queryParams("mission");
+            Add newheros = new Add(name, age, powers, weakness,size,mission,squad);
             model.put("heros", newheros);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
@@ -44,8 +47,10 @@ public class App {
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
         get("/detail", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();  //displaying home
+            Map<String, Object> model = new HashMap<>();//displaying home
+            ArrayList<Squad> squads = Squad.getAll();
             ArrayList<Add> heros = Add.getAll();
+            model.put("squads",squads );
             model.put("heros", heros);
             return new ModelAndView(model, "add-detail.hbs");
         }, new HandlebarsTemplateEngine());

@@ -1,22 +1,24 @@
 {{#partial "content"}}
     {{#if heros}}
         {{#each heros}}
-            <p>hero:</p>
-            <p>{{name}}</p>
-            <p>{{age}}</p>
-            <p>{{power}}</p>
-            <p>{{weakness}}</p>
+            <div class="row">
+                <div class="col-6">
+            <h3>Your hero:</h3>
+       Name: <p>{{name}}</p>
+         Age:<p>{{age}}</p>
+            Power:<p>{{power}}</p>
+       Weakness:<p>{{weakness}}</p>
+                </div>
+                <div class="col-6">
+            <h3>Your squad:</h3>
+        Size:<p>{{size}}</p>
+         Squad:<p>{{squad}}</p>
+            Squad Mission:<p>{{mission}}</p>
+                </div>
+            </div>
         {{/each}}
+    {{/if}}
     {{else}}
-        <p>no hero found!</p>
-    {{/if}}
-    {{#if squads}}
-        {{#each squads}}
-            <p>squad:</p>
-            <p>{{size}}</p>
-            <p>{{squad}}</p>
-            <p>{{mission}}</p>
-        {{/each}}
-    {{/if}}
-{{/partial}}
+        <a href="/data">Please Create Your hero And squad </a>
+    {{/partial}}
 {{> layout.hbs}}

@@ -32,6 +32,12 @@ public class SquadTest{
         assertTrue(Squad.getAll().contains(secondSquad));
     }
     @Test
+    public void  finding_The_Id(){
+        Squad.clear();
+        Squad mySquad = new Squad(5,"keepers","protect");
+        assertEquals(1,mySquad.findid());
+    }
+    @Test
     public void clear_All(){
         Squad.clear();
     }

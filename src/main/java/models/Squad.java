@@ -6,6 +6,7 @@ public class Squad {
     private int size;
     private String squad;
     private String mission;
+    private  int id;
 
     private static ArrayList<Squad> squads =new ArrayList<>();
 
@@ -13,6 +14,7 @@ public class Squad {
      this.size = size;
      this.squad= squad;
      this.mission=mission;
+     this.id =squads.size();
      squads.add(this);
      }
      public int getSize(){
@@ -30,5 +32,9 @@ public class Squad {
     public static void clear() {
         squads.clear();
     }
+    public int findid(){
+        return id;
+    }
+
 }
 
