@@ -4,21 +4,22 @@
             <div class="row">
                 <div class="col-6">
             <h3>Your hero:</h3>
-       Name: <p>{{name}}</p>
-         Age:<p>{{age}}</p>
-            Power:<p>{{power}}</p>
-       Weakness:<p>{{weakness}}</p>
+       <p> Name:{{name}}</p>
+        <p> Age:{{age}}</p>
+            <p>Power:{{power}}</p>
+       <p>Weakness:{{weakness}}</p>
                 </div>
                 <div class="col-6">
             <h3>Your squad:</h3>
-        Size:<p>{{size}}</p>
-         Squad:<p>{{squad}}</p>
-            Squad Mission:<p>{{mission}}</p>
+        <p>Size:{{size}}</p>
+         <p>Squad:{{squad}}</p>
+            <p>Squad Mission:{{mission}}</p>
                 </div>
             </div>
         {{/each}}
-    {{/if}}
+
     {{else}}
-        <a href="/data">Please Create Your hero And squad </a>
+        <p>No squad or hero currently.</p>
+    {{/if}}
     {{/partial}}
 {{> layout.hbs}}
