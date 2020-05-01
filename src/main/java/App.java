@@ -10,6 +10,16 @@ import static spark.Spark.*;
 
 public class App {
     public static void main(String[] args) {
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+
+        if (process.environment().get("PORT") != null) {
+            port = Integer.parseInt(process.environment().get("PORT"));
+        } else {
+            port = 4567;
+        }
+
+        port(port);
         staticFileLocation("/public");
         //get :show newadd form
         get("/add", (request, response) -> {
@@ -46,21 +56,21 @@ public class App {
             model.put("squads", squads);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
-        get("/detail", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();//displaying home
-            ArrayList<Squad> squads = Squad.getAll();
-            ArrayList<Add> heros = Add.getAll();
-            model.put("squads",squads );
-            model.put("heros", heros);
-            return new ModelAndView(model, "add-detail.hbs");
-        }, new HandlebarsTemplateEngine());
-
-        get("/post", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();  //displaying home
-            ArrayList<Squad> squads = Squad.getAll();
-            model.put("squads",squads );
-            return new ModelAndView(model, "add-detail.hbs");
-        }, new HandlebarsTemplateEngine());
+//        get("/detail", (request, response) -> {
+//            Map<String, Object> model = new HashMap<>();//displaying home
+//            ArrayList<Squad> squads = Squad.getAll();
+//            ArrayList<Add> heros = Add.getAll();
+//            model.put("squads",squads );
+//            model.put("heros", heros);
+//            return new ModelAndView(model, "add-detail.hbs");
+//        }, new HandlebarsTemplateEngine());
+//
+//        get("/post", (request, response) -> {
+//            Map<String, Object> model = new HashMap<>();  //displaying home
+//            ArrayList<Squad> squads = Squad.getAll();
+//            model.put("squads",squads );
+//            return new ModelAndView(model, "add-detail.hbs");
+//        }, new HandlebarsTemplateEngine());
 
     }
     }
