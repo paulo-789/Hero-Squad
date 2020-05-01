@@ -25,11 +25,8 @@ Hero-Squad
 *Spark
 
 
-## Behaviour Driven Development(BDD)
-When you run the app you are welcomed and the instructed to input 
-the text to be Encrypted and when you press enter you are asked to
-input the shift key which it should be in numbers.Then  you receive 
-your out put giving you the Encrypted Text plus the Decrypted text(the orginal text).
+## Behaviour Driven Development(BDD) 
+When you run the app you are welcomed.Their is a navigation that allows users to chooce if they wnt to see the hero or to create a hero.When one chooses creat hero a form pops up where one need to feel in the credentials then submit after that you are informed that the process was successful.If you go back to see hero you will be able to see the hero you added.
 
 
  ### Contacts
